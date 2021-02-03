@@ -15,7 +15,7 @@ import bodyParser from 'body-parser';
 import Cards from './dbCards.js';
 //App Config
 const app = express();
-const port = process.env.port || 3000;
+const PORT = process.env.PORT || 3000;
 const connection_url='mongodb+srv://admin:9ml8tJViqtSig5lt@cluster0.nqo65.mongodb.net/tinderdb?retryWrites=true&w=majority';
 
 //Middlewares
@@ -69,4 +69,7 @@ app.get("/tinder/cards",(req,res)=>{
 })
 //Listener
 
-app.listen(port, () => console.log(`listening on localhost: ${port}`));
+
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
+});
